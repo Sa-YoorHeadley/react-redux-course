@@ -1,13 +1,10 @@
-import Home from "./pages/Home";
+import Counter from "./features/counter/Counter";
 
 function App() {
   return (
-    <>
-      <nav>
-        <h1>Recipes for Ninjas</h1>
-      </nav>
-      <Home />
-    </>
+    <div className="h-full flex justify-center items-center">
+      <Counter />
+    </div>
   );
 }
 
