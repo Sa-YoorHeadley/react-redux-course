@@ -16,6 +16,11 @@ export default function Counter() {
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState(0);
 
+  const resetAll = () => {
+    setIncrementAmount(0);
+    dispatch(reset());
+  };
+
   return (
     <Card className="w-auto">
       <CardHeader className="flex justify-center">
@@ -31,8 +36,10 @@ export default function Counter() {
       <CardContent className="flex gap-4">
         <Button onClick={() => dispatch(increment())}>+</Button>
         <Button onClick={() => dispatch(decrement())}>-</Button>
-        <Button onClick={() => dispatch(reset())}>Reset</Button>
-        <Button onClick={() => dispatch(incrementByAmount(incrementAmount))}>Increment By Amount</Button>
+        <Button onClick={resetAll}>Reset</Button>
+        <Button onClick={() => dispatch(incrementByAmount(incrementAmount))}>
+          Add Amount
+        </Button>
       </CardContent>
     </Card>
   );
